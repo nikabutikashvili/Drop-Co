@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/Drop-Co/static/css/main.363f1f0c.chunk.css",
+    "main.js": "/Drop-Co/static/js/main.02757bd9.chunk.js",
+    "main.js.map": "/Drop-Co/static/js/main.02757bd9.chunk.js.map",
+    "runtime-main.js": "/Drop-Co/static/js/runtime-main.6a5f3d96.js",
+    "runtime-main.js.map": "/Drop-Co/static/js/runtime-main.6a5f3d96.js.map",
+    "static/js/2.8c8b356c.chunk.js": "/Drop-Co/static/js/2.8c8b356c.chunk.js",
+    "static/js/2.8c8b356c.chunk.js.map": "/Drop-Co/static/js/2.8c8b356c.chunk.js.map",
+    "index.html": "/Drop-Co/index.html",
+    "precache-manifest.b72c8707e8a14b9a15e7f227758ea551.js": "/Drop-Co/precache-manifest.b72c8707e8a14b9a15e7f227758ea551.js",
+    "service-worker.js": "/Drop-Co/service-worker.js",
+    "static/css/main.363f1f0c.chunk.css.map": "/Drop-Co/static/css/main.363f1f0c.chunk.css.map",
+    "static/js/2.8c8b356c.chunk.js.LICENSE.txt": "/Drop-Co/static/js/2.8c8b356c.chunk.js.LICENSE.txt",
+    "static/media/barred.jpg": "/Drop-Co/static/media/barred.92ce138d.jpg",
+    "static/media/coffeegreen.jpg": "/Drop-Co/static/media/coffeegreen.bb3b7d4e.jpg",
+    "static/media/App.css": "/Drop-Co/static/media/teaseeds.aaf6069d.jpg",
+    "static/media/coffeeshop.jpeg": "/Drop-Co/static/media/coffeeshop.d1dcd8ef.jpeg",
+    "static/media/instagram.png": "/Drop-Co/static/media/instagram.298f1f44.png",
+    "static/media/kitchen.jpeg": "/Drop-Co/static/media/kitchen.d9953c68.jpeg",
+    "static/media/logo.png": "/Drop-Co/static/media/logo.e5305f5f.png",
+    "static/media/minus.png": "/Drop-Co/static/media/minus.c0cfc94c.png",
+    "static/media/plus.png": "/Drop-Co/static/media/plus.7e6eff77.png",
+    "static/media/snapchat.png": "/Drop-Co/static/media/snapchat.e696e577.png",
+    "static/media/twitter.png": "/Drop-Co/static/media/twitter.c228a51f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a5f3d96.js",
+    "static/js/2.8c8b356c.chunk.js",
+    "static/css/main.363f1f0c.chunk.css",
+    "static/js/main.02757bd9.chunk.js"
+  ]
+}
