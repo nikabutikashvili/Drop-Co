@@ -113,6 +113,7 @@ input[type="search"]::-webkit-search-results-decoration {
   justify-content: space-evenly;
   align-items: center;
 }
+
 .header::after {
   -webkit-box-shadow: 0px 3px 15px rgba(100, 100, 100, 0.49);
   -moz-box-shadow: 0px 3px 15px rgba(100, 100, 100, 0.49);
@@ -124,6 +125,11 @@ input[type="search"]::-webkit-search-results-decoration {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+@media (max-width: 570px) {
+  .header-list {
+    flex-direction: column;
+  }
 }
 .header-list > li:hover {
   color: rgb(248, 135, 100);
@@ -140,6 +146,11 @@ input[type="search"]::-webkit-search-results-decoration {
 .left-panel {
   width: 50%;
   display: flex;
+}
+@media (max-width: 570px) {
+  .left-panel {
+    display: none;
+  }
 }
 .coffee-cup-daily-update {
   width: 250px;
@@ -206,6 +217,16 @@ input[type="search"]::-webkit-search-results-decoration {
 .about-us-image {
   width: 50%;
 }
+@media (max-width: 570px) {
+  .about-us-image,
+  .background-cover {
+    display: none;
+  }
+  .about-us-text {
+    text-align: center;
+    width: 100%;
+  }
+}
 .coffee-shop-image {
   width: 300px;
   height: 628px;
@@ -245,6 +266,7 @@ input[type="search"]::-webkit-search-results-decoration {
   flex-direction: column;
   align-items: center;
 }
+
 .coffee-seeds {
   width: 90%;
   height: 432px;
@@ -290,6 +312,7 @@ input[type="search"]::-webkit-search-results-decoration {
   text-align: center;
   margin-top: 50px;
 }
+
 .snacks-in-best-seller {
   width: 50%;
   display: flex;
@@ -336,6 +359,31 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .all-products-best-seller:hover:after {
   width: 100%;
+}
+@media (max-width: 570px) {
+  .best-seller {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .products-in-best-seller-1 {
+    display: block;
+  }
+  .products-in-best-seller-2 {
+    display: block;
+  }
+  .coffee-in-best-seller,
+  .tea-in-best-seller,
+  .snacks-in-best-seller,
+  .all-products {
+    width: 100%;
+  }
+  .best-seller-title {
+    text-align: center;
+  }
+  .best-seller-title > h1 {
+    margin-left: auto;
+    font-size: 32px;
+  }
 }
 
 /* footer */
@@ -404,6 +452,20 @@ input[type="search"]::-webkit-search-results-decoration {
   cursor: pointer;
   text-transform: uppercase;
   color: white;
+}
+
+@media (max-width: 570px) {
+  .footer-container {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .column-1,
+  .column-2,
+  .column-3 {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 /* Log in */
