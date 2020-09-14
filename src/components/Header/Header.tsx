@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import Select from "react-select";
-import { animated, useSpring } from "react-spring";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 import search from "../../images/search.png";
@@ -11,18 +10,7 @@ import { CartContext } from "../Products/CartContext";
 function Header() {
   const [user, setUser] = useContext(UserContext);
   const [cart, setCart] = useContext(CartContext);
-  const anim = useSpring({
-    from: {
-      marginTop: "-500px",
-    },
-    to: {
-      marginTop: "0px",
-    },
-  });
-  const languages = [
-    { value: "English", label: "English" },
-    { value: "ქართული", label: "Georgian" },
-  ];
+  const [open, setOpen] = useState(false);
   return (
     <div className="header">
       <ul className="header-list">
@@ -32,13 +20,16 @@ function Header() {
           </Link>
         </li>
         <li>
-          <Link to="/login">{user}</Link>
+          <Link to="/login">
+            {user.account.username ? user.account.username : "Login"}
+          </Link>
         </li>
         <li>
           <Link to="/basket">Basket {cart.length > 0 ? cart.length : ""}</Link>
         </li>
-        <li>
+        <li onMouseOver={() => setOpen(true)} onMouseOut={() => setOpen(false)}>
           <Link to="/products">Products</Link>
+          {/* {open && <DropDownMenu />} */}
         </li>
         <li>
           <Link to="/aboutus">About Us</Link>

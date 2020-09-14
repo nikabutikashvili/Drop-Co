@@ -1,18 +1,9 @@
 import React from "react";
-import { animated, useSpring } from "react-spring";
 import coffeeshop from "../../images/coffeeshop.jpeg";
 function AboutUs() {
-  const leftAnimation = useSpring({
-    from: {
-      marginLeft: "-500px",
-    },
-    to: {
-      marginLeft: "0px",
-    },
-  });
   return (
     <div className="about-us">
-      <animated.div style={leftAnimation} className="about-us-text">
+      <div className="about-us-text">
         <h1>About Us</h1>
         <div className="about-us-story">
           <p>
@@ -24,7 +15,7 @@ function AboutUs() {
             spiked coffee.
           </p>
         </div>
-      </animated.div>
+      </div>
       <div className="about-us-image">
         <img className="coffee-shop-image" src={coffeeshop} alt="coffeeshop" />
       </div>

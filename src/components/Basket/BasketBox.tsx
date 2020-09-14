@@ -1,17 +1,31 @@
-import React from 'react';
+import React from "react";
 
-function BasketBox(props: any) {
-    const style = {
-        color: "white"
-    }
-    return (
-        <div style={style} className="basket-box">
-            <img className="product-image-in-basket" src={props.img} />
-            <h1>{props.name}</h1>
-            <h2>$ {props.price}</h2>
-            <h1 onClick={props.delete}>X</h1>
-        </div>
-    )
+interface basket {
+  name: string;
+  price: number;
+  img: string;
+  number: number;
+  delete(): void;
+  add(): void;
+}
+
+function BasketBox(props: basket) {
+  return (
+    <tr className="basket-box">
+      <td>
+        <img className="product-image-in-basket" src={props.img} />
+      </td>
+      <td>{props.name}</td>
+      <td>$ {props.price * props.number}</td>
+      <td>{props.number}</td>
+      <td onClick={props.delete} className="sign">
+        -
+      </td>
+      <td onClick={props.add} className="sign">
+        +
+      </td>
+    </tr>
+  );
 }
 
 export default BasketBox;

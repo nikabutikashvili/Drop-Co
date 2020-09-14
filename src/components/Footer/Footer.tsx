@@ -73,9 +73,11 @@ function Footer() {
           </ul>
         </div>
         <div className="column-3">
-          <button className="feedback-btn-footer">
-            Gives Us Your Feedback
-          </button>
+          <Link to="/contact">
+            <button className="feedback-btn-footer btn">
+              Gives Us Your Feedback
+            </button>
+          </Link>
         </div>
       </div>
     </div>

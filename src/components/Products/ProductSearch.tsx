@@ -5,7 +5,7 @@ function Search(props: any) {
       <input
         type="search"
         onChange={props.onSearch}
-        className="search-product"
+        className="search-product form-control"
         placeholder="Search"
       />
     </div>

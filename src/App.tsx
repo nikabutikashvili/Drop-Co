@@ -6,7 +6,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import BestSeller from "./components/BestSeller/BestSeller";
 import Contact from "./components/Contact/Contact";
 import Products from "./components/Products/Products";
-import Login from "./components/Header/Login";
+import Login from "./components/Header/LoginForm";
 import SignUp from "./components/Header/SingUp";
 import Footer from "./components/Footer/Footer";
 import CoffeeCatalogue from "./components/Products/CoffeeCatalogue";
@@ -26,11 +26,15 @@ import { UserProvider } from "./components/Header/UserContext";
 import NotFound from "./components/NotFound/NotFound";
 import GetYourDiscount from "./components/GetYourDiscount/GetYourDiscount";
 import { DiscountProvider } from "./components/GetYourDiscount/DiscountContext";
-
-function App() {
+import AllProductsCatalogue from "./components/Products/AllproductsCatalogue";
+import { useEffect } from "react";
+function App(props: any) {
+  useEffect(() => {
+    props.hideLoader();
+  });
   return (
     <div className="container">
-      <PopUp />
+      {/* <PopUp /> */}
       <CartProvider>
         <UserProvider>
           <DiscountProvider>
@@ -51,6 +55,10 @@ function App() {
               <Route path="/coffeecatalogue" component={CoffeeCatalogue} />
               <Route path="/teacatalogue" component={TeaCatalogue} />
               <Route path="/snackscatalogue" component={SnacksCatalogue} />
+              <Route
+                path="/allproductscatalogue"
+                component={AllProductsCatalogue}
+              />
               <Route path="/basket" component={Basket} />
               <Route path="/not-found" component={NotFound} />
               <Redirect to="/not-found" />

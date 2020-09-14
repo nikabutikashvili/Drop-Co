@@ -50,7 +50,10 @@ function BestSeller() {
         </div>
         <div className="all-products">
           <div className="all-products-box">
-            <Link to="/products" className="all-products-best-seller">
+            <Link
+              to="/allproductscatalogue"
+              className="all-products-best-seller"
+            >
               <h1>All Products</h1>
             </Link>
           </div>

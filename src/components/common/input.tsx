@@ -12,6 +12,7 @@ function Input(props: any) {
         type={props.type}
         autoFocus
       />
+      {props.error && <div>{props.error}</div>}
     </>
   );
 }

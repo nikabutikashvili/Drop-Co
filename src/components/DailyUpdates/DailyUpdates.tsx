@@ -23,7 +23,7 @@ function DailyUpdates() {
           Sing Up to get exclusive access to deals on drinks this holiday season
         </p>
         <Link to="/getyourdiscount">
-          <button className="discount-button">Get Your Discount</button>
+          <button className="discount-button btn">Get Your Discount</button>
         </Link>
       </div>
     </div>

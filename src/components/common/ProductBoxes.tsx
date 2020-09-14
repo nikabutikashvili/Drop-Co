@@ -3,16 +3,37 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../Products/CartContext";
 function Boxes(props: any) {
   const [cart, setCart] = useContext(CartContext);
+  console.log(cart);
   return (
     <div className="grids">
       {props.products.map((product: any) => {
         const addToCart = () => {
-          const addedProduct = {
-            name: product.name,
-            img: product.img,
-            price: product.price,
-          };
-          setCart((currentCart: any) => [...currentCart, addedProduct]);
+          if (cart.length === 0) {
+            const addedProduct = {
+              name: product.name,
+              img: product.img,
+              price: product.price,
+              number: product.number,
+            };
+            setCart((currentCart: any) => [...currentCart, addedProduct]);
+          } else {
+            for (let index = 0; index < cart.length; index++) {
+              if (cart[index].name === product.name) {
+                let newCart = [...cart];
+                newCart[index].number = cart[index].number + 1;
+                setCart(newCart);
+                break;
+              } else if (index + 1 === cart.length) {
+                const addedProduct = {
+                  name: product.name,
+                  img: product.img,
+                  price: product.price,
+                  number: product.number,
+                };
+                setCart((currentCart: any) => [...currentCart, addedProduct]);
+              }
+            }
+          }
         };
         return (
           <div className="grid-items">
