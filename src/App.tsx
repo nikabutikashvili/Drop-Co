@@ -29,9 +29,6 @@ import { DiscountProvider } from "./components/GetYourDiscount/DiscountContext";
 import AllProductsCatalogue from "./components/Products/AllproductsCatalogue";
 import { useEffect } from "react";
 function App(props: any) {
-  useEffect(() => {
-    props.hideLoader();
-  });
   return (
     <div className="container">
       {/* <PopUp /> */}
