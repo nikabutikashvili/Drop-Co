@@ -47,9 +47,9 @@ function LoginForm() {
   };
   const { account } = user;
   return (
-    <div>
-      <h1 className="text-center">Login</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="login">
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit} className="login-container">
         <div className="form-group">
           <label htmlFor="username">Username</label>
           <input
@@ -58,7 +58,7 @@ function LoginForm() {
             id="username"
             name="username"
             type="text"
-            className="form-control"
+            className="input-style"
             placeholder="Username"
             autoFocus
           />
@@ -72,12 +72,12 @@ function LoginForm() {
             id="password"
             name="password"
             type="text"
-            className="form-control"
+            className="input-style"
             placeholder="Password"
           />
           {user.errors.password && <div>{user.errors.password} </div>}
         </div>
-        <button className="btn btn-primary">Login</button>
+        <button className="btn">Login</button>
       </form>
     </div>
   );

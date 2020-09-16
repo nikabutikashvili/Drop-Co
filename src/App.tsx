@@ -39,8 +39,8 @@ function App(props: any) {
             <Switch>
               <Route exact path="/">
                 <DailyUpdates />
-                <AboutUs />
                 <BestSeller />
+                <AboutUs />
               </Route>
               <Route path="/contact" component={Contact} />
               <Route path="/aboutus" component={AboutUs} />

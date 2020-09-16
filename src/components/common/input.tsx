@@ -11,6 +11,7 @@ function Input(props: any) {
         id={props.name}
         type={props.type}
         autoFocus
+        className="input-style"
       />
       {props.error && <div>{props.error}</div>}
     </>

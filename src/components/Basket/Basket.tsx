@@ -63,13 +63,13 @@ function Basket() {
         ""
       )}
       {cart.length > 0 ? (
-        <div>
+        <>
           {" "}
           <h1>
             Total Sum: {Discount > 0 ? (totalSum * 0.8).toFixed(2) : totalSum}
           </h1>
           <button className="btn">Check Out</button>
-        </div>
+        </>
       ) : (
         <h3>There are no items in your Basket</h3>
       )}
