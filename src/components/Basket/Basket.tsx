@@ -43,8 +43,8 @@ function Basket() {
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th></th>
-            <th></th>
+            <th>Delete</th>
+            <th>Add</th>
           </tr>
           {cart.map((item: any) => (
             <>
@@ -66,7 +66,7 @@ function Basket() {
         <>
           {" "}
           <h1>
-            Total Sum: {Discount > 0 ? (totalSum * 0.8).toFixed(2) : totalSum}
+            Total Sum: $ {Discount > 0 ? (totalSum * 0.8).toFixed(2) : totalSum}
           </h1>
           <button className="btn">Check Out</button>
         </>

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../Products/CartContext";
 function Boxes(props: any) {
   const [cart, setCart] = useContext(CartContext);
-  console.log(cart);
   return (
     <div className="grids">
       {props.products.map((product: any) => {
@@ -46,6 +45,9 @@ function Boxes(props: any) {
                   about: product.about,
                   calories: product.calories,
                   image: product.img,
+                  number: product.number,
+                  id: product.id,
+                  reviews: product.reviews,
                 },
               }}
             >

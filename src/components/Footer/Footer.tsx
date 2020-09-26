@@ -10,8 +10,10 @@ function Footer() {
     <div className="footer">
       <div className="footer-container">
         <div className="column-1">
-          <div className="logo-in-footer-box">
-            <img className="logo-in-footer" src={logo} alt="logo" />
+          <div className="logo">
+            <div className="logo-1"></div>
+            <div className="logo-2"></div>
+            <div className="logo-3"></div>
           </div>
           <div className="social-media-box">
             <img

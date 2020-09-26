@@ -10,6 +10,16 @@ function DailyUpdates() {
         <p>
           Sing Up to get exclusive access to deals on drinks this holiday season
         </p>
+        <div className="achievement">
+          <div className="achivement-item">
+            <h1>150</h1>
+            <p>people employed</p>
+          </div>
+          <div className="achivement-item">
+            <h1>27</h1>
+            <p>places to visit us</p>
+          </div>
+        </div>
       </div>
       <div className="right-panel">
         <Link to="/getyourdiscount">
