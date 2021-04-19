@@ -1,5 +1,5 @@
 import React from "react";
-import ProductsCatalogue from "../common/ProductsCatalogue";
+import ProductsCatalogue from "../../shared/ProductsCatalogue";
 
 function AllProductsCatalogue() {
   return (

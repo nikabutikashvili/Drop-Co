@@ -1,37 +1,31 @@
 import React from "react";
-import PopUp from "./PopUp";
-import Header from "./components/Header/Header";
-import DailyUpdates from "./components/DailyUpdates/DailyUpdates";
-import AboutUs from "./components/AboutUs/AboutUs";
-import BestSeller from "./components/BestSeller/BestSeller";
-import Contact from "./components/Contact/Contact";
+import Header from "./components/Header";
+import DailyUpdates from "./components/DailyUpdates";
+import AboutUs from "./components/AboutUs";
+import BestSeller from "./components/BestSeller";
+import Contact from "./components/Contact";
 import Products from "./components/Products/Products";
-import Login from "./components/Header/LoginForm";
-import SignUp from "./components/Header/SingUp";
-import Footer from "./components/Footer/Footer";
+import Login from "./components/Auth/LoginForm";
+import SignUp from "./components/Auth/SingUp";
+import Footer from "./components/Footer";
 import CoffeeCatalogue from "./components/Products/CoffeeCatalogue";
 import TeaCatalogue from "./components/Products/TeaCatalogue";
-import SnacksCatalogue from "./components/Products/SnacksCatalogue";
+import SnacksCatalogue from "./components/Products/SnackCatalogue";
 import InsideProductComponent from "./components/Products/InsideProducts/InsideProductsComponent";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
-import Basket from "./components/Basket/Basket";
+import Basket from "./components/Basket";
 import { CartProvider } from "./components/Products/CartContext";
-import { UserProvider } from "./components/Header/UserContext";
-import NotFound from "./components/NotFound/NotFound";
-import GetYourDiscount from "./components/GetYourDiscount/GetYourDiscount";
+import { UserProvider } from "./components/Auth/UserContext";
+import NotFound from "./components/NotFound";
+import GetYourDiscount from "./components/GetYourDiscount";
 import { DiscountProvider } from "./components/GetYourDiscount/DiscountContext";
 import AllProductsCatalogue from "./components/Products/AllproductsCatalogue";
-import { IsUserProvider } from "./components/Header/IsUserContext";
-function App(props: any) {
+import { IsUserProvider } from "./components/Auth/IsUserContext";
+
+function App() {
   return (
     <div className="container">
-      {/* <PopUp /> */}
       <CartProvider>
         <UserProvider>
           <IsUserProvider>

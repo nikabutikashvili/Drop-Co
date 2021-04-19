@@ -1,6 +1,6 @@
 import React from "react";
 
-interface basket {
+interface Basket {
   name: string;
   price: number;
   img: string;
@@ -9,7 +9,7 @@ interface basket {
   add(): void;
 }
 
-function BasketBox(props: basket) {
+function BasketBox(props: Basket) {
   return (
     <tr className="basket-box">
       <td>

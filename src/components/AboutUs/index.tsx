@@ -1,6 +1,10 @@
+// Core
 import React from "react";
+
+// Images
 import coffeeshop from "../../images/coffeeshop.jpeg";
-function AboutUs() {
+
+const AboutUs = () => {
   return (
     <div className="about-us">
       <div className="about-us-text">
@@ -22,6 +26,6 @@ function AboutUs() {
       <div className="background-cover"></div>
     </div>
   );
-}
+};
 
 export default AboutUs;

@@ -1,8 +1,8 @@
 import React, { useState, SyntheticEvent } from "react";
-import Search from "../Products/ProductSearch";
+import Search from "../components/Products/ProductSearch";
 import Boxes from "./ProductBoxes";
 import Pagination from "./pagination";
-import { paginate } from "../../utils/paginate";
+import { paginate } from "../utils/paginate";
 import { useEffect } from "react";
 
 function ProductsCatalogue(props: any) {

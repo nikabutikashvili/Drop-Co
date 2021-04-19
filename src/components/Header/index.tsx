@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import Select from "react-select";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo.png";
-import search from "../../images/search.png";
 import { useContext } from "react";
 import { CartContext } from "../Products/CartContext";
-import { UserContext } from "./UserContext";
-import { IsUserContext } from "./IsUserContext";
+import { UserContext } from "../Auth/UserContext";
+import { IsUserContext } from "../Auth/IsUserContext";
 
 function Header() {
   const [user, setUser] = useContext(UserContext);

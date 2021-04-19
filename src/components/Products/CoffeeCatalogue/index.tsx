@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useEffect } from "react";
-import ProductsCatalogue from "../common/ProductsCatalogue";
+import ProductsCatalogue from "../../../shared/ProductsCatalogue";
 
-function TeaCatalogue() {
+function CoffeeCatalogue() {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     const fetchData = async () => {
-      const { data: teaData } = await axios.get("http://localhost:3000/tea");
-      setData([...teaData]);
+      const { data: coffeeData } = await axios.get(
+        "http://localhost:4000/coffee"
+      );
+      setData([...coffeeData]);
       setLoading(false);
     };
     fetchData();
@@ -26,4 +27,5 @@ function TeaCatalogue() {
     </div>
   );
 }
-export default TeaCatalogue;
+
+export default CoffeeCatalogue;

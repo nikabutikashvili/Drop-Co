@@ -1,5 +1,5 @@
 import React, { useState, createContext, ReactComponentElement } from "react";
-import ProductBoxes from "../common/ProductBoxes";
+import ProductBoxes from "../../shared/ProductBoxes";
 
 export const CartContext = createContext([]) as any;
 
