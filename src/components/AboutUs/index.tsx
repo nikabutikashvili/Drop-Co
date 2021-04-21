@@ -1,8 +1,7 @@
-// Core
 import React from "react";
+import coffeeshop from "../../assets/images/coffeeshop.jpeg";
 
-// Images
-import coffeeshop from "../../images/coffeeshop.jpeg";
+import "./styles.css";
 
 const AboutUs = () => {
   return (

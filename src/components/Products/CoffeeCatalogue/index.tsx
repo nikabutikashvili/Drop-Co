@@ -19,7 +19,7 @@ function CoffeeCatalogue() {
     <div>
       {loading ? (
         <div className="loading">
-          <h1>Still Loading</h1>
+          <h1>Loading</h1>
         </div>
       ) : (
         <ProductsCatalogue data={data} />

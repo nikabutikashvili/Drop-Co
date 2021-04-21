@@ -1,0 +1,17 @@
+.discount-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.discount-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 300px;
+  background-color: rgba(0, 44, 68, 0.5);
+}
+.discount-box > h2 {
+  letter-spacing: 8px;
+}

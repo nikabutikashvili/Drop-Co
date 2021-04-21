@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import * as React from "react";
 import { DiscountContext } from "./DiscountContext";
 
-function GetYourDiscount() {
+import "./styles.css";
+
+const GetYourDiscount: React.FC = () => {
   const random = Math.floor(Math.random() * 1000000);
-  const [Discount, setDiscount] = useContext(DiscountContext);
-  setDiscount(1);
+  const [Discount, setDiscount] = React.useContext(DiscountContext);
+  React.useEffect(() => {
+    setDiscount(1);
+  }, []);
 
   return (
     <div className="discount-container">
@@ -14,6 +18,6 @@ function GetYourDiscount() {
       </div>
     </div>
   );
-}
+};
 
 export default GetYourDiscount;

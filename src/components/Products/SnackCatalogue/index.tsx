@@ -14,7 +14,7 @@ function SnacksCatalogue() {
       setLoading(false);
     };
     fetchData();
-  });
+  }, []);
   return (
     <div>
       {loading ? (

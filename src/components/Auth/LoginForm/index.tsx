@@ -1,16 +1,17 @@
 import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
-import { UserContext } from "./UserContext";
-import { IsUserContext } from "./IsUserContext";
+import { UserContext } from "../UserContext";
+import { IsUserContext } from "../IsUserContext";
 
 export interface errors {
   username?: string;
   password?: string;
 }
 
-function LoginForm() {
+const LoginForm = () => {
   const [user, setUser] = useContext(UserContext);
   const [isUser, setIsUser] = useContext(IsUserContext);
+
   const validate = () => {
     const errors: errors = {};
     const { account } = user;
@@ -20,6 +21,7 @@ function LoginForm() {
       errors.password = "Password is required";
     return Object.keys(errors).length === 0 ? null : errors;
   };
+
   const handleSubmit = (e: any) => {
     e.preventDefault(); //prevents whole page reload when submitted
     const errors = validate();
@@ -29,6 +31,7 @@ function LoginForm() {
     window.location.href = "/";
     //call the server
   };
+
   const validateProperty = (input: HTMLInputElement) => {
     if (input.name === "username") {
       if (input.value.trim() === "") return "Username is required";
@@ -37,6 +40,7 @@ function LoginForm() {
       if (input.value.trim() === "") return "Password is required";
     }
   };
+
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const errors = { ...user.errors };
     const errorMessage = validateProperty(e.currentTarget);
@@ -47,9 +51,11 @@ function LoginForm() {
     account[e.currentTarget.name] = e.currentTarget.value;
     setUser({ account, errors });
   };
+
   const handleUser = () => {
     setIsUser(true);
   };
+
   const { account } = user;
   return (
     <div className="login">
@@ -89,6 +95,6 @@ function LoginForm() {
       <div className="yellow-background"></div>
     </div>
   );
-}
+};
 
 export default LoginForm;

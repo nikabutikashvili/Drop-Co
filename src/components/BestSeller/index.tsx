@@ -1,56 +1,58 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import coffeemachine from "../../images/coffeemachine.jpg";
-import teacup from "../../images/teacup.jpg";
-import snacks from "../../images/snacks.jpg";
-import allproducts from "../../images/allproducts.jpg";
-function BestSeller() {
-  const [show, setShow] = useState({ display: "none" });
-  const [teah1, setTeah1] = useState({ display: "none" });
-  const [snacksh1, setSnacksh1] = useState({ display: "none" });
+import * as React from "react";
+
+import ProductBar from "./ProductBar";
+
+import coffeemachine from "../../assets/images/coffeemachine.jpg";
+import teacup from "../../assets/images/teacup.jpg";
+import snacks from "../../assets/images/snacks.jpg";
+import allproducts from "../../assets/images/allproducts.jpg";
+
+import "./styles.css";
+
+const BestSeller: React.FC = () => {
   return (
     <div className="our-products-container">
       <div className="our-products">
         <h1>Our Products</h1>
         <div className="products-kinds">
-          <Link to="coffeecatalogue" className="coffee">
-            <img src={coffeemachine} />
-            <h1>Coffee</h1>
-            <p>
-              Different types of Coffee for different types of people. Start
-              your daily routine with Drop-Co and make the day successfull
-            </p>
-          </Link>
-          <Link to="teacatalogue" className="tea">
-            <img src={teacup} />
-            <h1>Tea</h1>
-            <p>
-              Different types of Coffee for different types of people. Start
-              your daily routine with Drop-Co and make the day successfull
-            </p>
-          </Link>
+          <ProductBar
+            link="coffeecatalogue"
+            className="coffee"
+            img={coffeemachine}
+            title="Coffee"
+            text="Different types of Coffee for different types of people. Start
+              your daily routine with Drop-Co and make the day successfull"
+          />
+          <ProductBar
+            link="teacatalogue"
+            className="tea"
+            img={teacup}
+            title="Tea"
+            text="Different types of Coffee for different types of people. Start
+              your daily routine with Drop-Co and make the day successfull"
+          />
         </div>
         <div className="products-kinds">
-          <Link to="snacks-catalogue" className="snacks">
-            <img src={snacks} />
-            <h1>Snacks</h1>
-            <p>
-              Different types of Coffee for different types of people. Start
-              your daily routine with Drop-Co and make the day successfull
-            </p>
-          </Link>
-          <Link to="allproductscatalogue" className="all-products">
-            <img src={allproducts} />
-            <h1>All Products</h1>
-            <p>
-              Different types of Coffee for different types of people. Start
-              your daily routine with Drop-Co and make the day successfull
-            </p>
-          </Link>
+          <ProductBar
+            link="snackscatalogue"
+            className="snacks"
+            img={snacks}
+            title="Snacks"
+            text="Different types of Coffee for different types of people. Start
+              your daily routine with Drop-Co and make the day successfull"
+          />
+          <ProductBar
+            link="allproductscatalogue"
+            className="all-products"
+            img={allproducts}
+            title="All Products"
+            text="Different types of Coffee for different types of people. Start
+              your daily routine with Drop-Co and make the day successfull"
+          />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default BestSeller;

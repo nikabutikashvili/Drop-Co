@@ -1,11 +1,16 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../components/Products/CartContext";
-function Boxes(props: any) {
+import { CartContext } from "../../components/Products/CartContext";
+
+interface Props {
+  products: [{ name: string; img: string; price: number; number: number }];
+}
+
+const Boxes: React.FC<Props> = ({ products }) => {
   const [cart, setCart] = useContext(CartContext);
   return (
     <div className="grids">
-      {props.products.map((product: any) => {
+      {products?.map((product: any) => {
         const addToCart = () => {
           if (cart.length === 0) {
             const addedProduct = {
@@ -64,6 +69,6 @@ function Boxes(props: any) {
       })}
     </div>
   );
-}
+};
 
 export default Boxes;

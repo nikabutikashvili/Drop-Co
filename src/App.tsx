@@ -5,8 +5,6 @@ import AboutUs from "./components/AboutUs";
 import BestSeller from "./components/BestSeller";
 import Contact from "./components/Contact";
 import Products from "./components/Products/Products";
-import Login from "./components/Auth/LoginForm";
-import SignUp from "./components/Auth/SingUp";
 import Footer from "./components/Footer";
 import CoffeeCatalogue from "./components/Products/CoffeeCatalogue";
 import TeaCatalogue from "./components/Products/TeaCatalogue";
@@ -22,10 +20,16 @@ import GetYourDiscount from "./components/GetYourDiscount";
 import { DiscountProvider } from "./components/GetYourDiscount/DiscountContext";
 import AllProductsCatalogue from "./components/Products/AllproductsCatalogue";
 import { IsUserProvider } from "./components/Auth/IsUserContext";
+import languages from "./settings/Language/index";
+import ScrollToTop from "./shared/ScrollToTop";
+
+const lang = "en";
 
 function App() {
   return (
+    // <IntlProvider messages={languages[lang]} locale={lang}>
     <div className="container">
+      <ScrollToTop />
       <CartProvider>
         <UserProvider>
           <IsUserProvider>
@@ -45,8 +49,6 @@ function App() {
                   component={InsideProductComponent}
                 />
                 <Route path="/products" component={Products} />
-                <Route path="/login" component={Login} />
-                <Route path="/singup" component={SignUp} />
                 <Route path="/coffeecatalogue" component={CoffeeCatalogue} />
                 <Route path="/teacatalogue" component={TeaCatalogue} />
                 <Route path="/snackscatalogue" component={SnacksCatalogue} />
@@ -64,6 +66,7 @@ function App() {
         <Footer />
       </CartProvider>
     </div>
+    // </IntlProvider>
   );
 }
 

@@ -1,0 +1,133 @@
+/* header */
+.header {
+  height: 100px;
+  position: sticky;
+  top: 0%;
+  z-index: 1;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header::after {
+  -webkit-box-shadow: 0px 3px 15px rgba(100, 100, 100, 0.49);
+  -moz-box-shadow: 0px 3px 15px rgba(100, 100, 100, 0.49);
+  box-shadow: 0px 3px 15px rgba(100, 100, 100, 0.49);
+}
+
+.header-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@media (max-width: 570px) {
+  .header-list {
+    flex-direction: column;
+  }
+}
+.header-list > li:hover {
+  color: rgb(248, 135, 100);
+}
+.logo-in-header {
+  width: 100px;
+}
+.product-in-header {
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  position: relative;
+}
+.logo-1,
+.logo-2,
+.logo-3 {
+  width: 60px;
+  height: 5px;
+  margin: 3px;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+.logo-1,
+.logo-3 {
+  background-color: rgb(20, 164, 156);
+}
+.logo-1 {
+  top: 0;
+  left: 0;
+}
+.logo-2 {
+  background-color: rgb(255, 195, 91);
+  right: 0;
+}
+.logo-3 {
+  bottom: 0;
+  left: 0;
+}
+
+.logo:hover .logo-1 {
+  left: 40px;
+}
+.logo:hover .logo-3 {
+  left: 40px;
+}
+.logo:hover .logo-2 {
+  right: 40px;
+}
+
+.item-with-drop-down {
+  position: relative;
+}
+
+.drop-down-menu {
+  position: absolute;
+  right: -67px;
+  text-align: center;
+  opacity: 0;
+  cursor: pointer;
+  width: 208px;
+  height: 150px;
+  background-color: #fff;
+  box-shadow: 0 24px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  display: none;
+}
+.drop-down-menu li {
+  margin-top: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: "Montserrat SemiBold", sans-serif;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+  padding: 12px 0;
+  display: block;
+  color: #000;
+}
+.product-in-header:hover + ul,
+.drop-down-menu:hover {
+  opacity: 1;
+  display: block;
+}
+.drop-down-menu li:hover {
+  background-color: rgba(255, 195, 91, 0.5);
+}

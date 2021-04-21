@@ -1,9 +1,23 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, ReactNode, useState } from "react";
+
+export interface ContextProviderInterface {
+  children: ReactNode;
+}
+
+export interface User {
+  account: {
+    username: string;
+    password: string;
+  };
+  errors: {};
+}
 
 export const UserContext = createContext([]) as any;
 
-export function UserProvider(props: any) {
-  const [user, setUser] = useState({
+export const UserProvider = ({
+  children,
+}: ContextProviderInterface): JSX.Element => {
+  const [user, setUser] = useState<User>({
     account: {
       username: "",
       password: "",
@@ -12,7 +26,7 @@ export function UserProvider(props: any) {
   });
   return (
     <UserContext.Provider value={[user, setUser]}>
-      {props.children}
+      {children}
     </UserContext.Provider>
   );
-}
+};

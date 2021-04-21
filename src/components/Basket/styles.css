@@ -1,0 +1,37 @@
+.basket-section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  min-height: calc(100vh - 150px);
+}
+
+.cart-items {
+  padding: 0 40px;
+}
+
+.basket-box {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  height: 4em;
+  background-color: rgba(20, 164, 156, 0.5);
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.cart-item {
+  margin: auto;
+  text-align: center;
+}
+
+.sign {
+  cursor: pointer;
+}
+.product-image-in-basket {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.payment {
+  text-align: center;
+}

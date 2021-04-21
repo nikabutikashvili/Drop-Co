@@ -1,14 +1,18 @@
-import React from "react";
-import { createContext } from "react";
-import { useState } from "react";
+import React, { useState, createContext, ReactNode } from "react";
+
+export interface ContextProviderInterface {
+  children: ReactNode;
+}
 
 export const IsUserContext = createContext([]) as any;
 
-export function IsUserProvider(props: any) {
-  const [isUser, setIsUser] = useState(false);
+export function IsUserProvider({
+  children,
+}: ContextProviderInterface): JSX.Element {
+  const [isUser, setIsUser] = useState<boolean>(false);
   return (
     <IsUserContext.Provider value={[isUser, setIsUser]}>
-      {props.children}
+      {children}
     </IsUserContext.Provider>
   );
 }

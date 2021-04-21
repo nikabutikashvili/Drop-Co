@@ -1,8 +1,9 @@
-import React from "react";
-import coffeegreen from "../../images/coffeegreen.jpg";
-import barred from "../../images/barred.jpg";
+import * as React from "react";
 import { Link } from "react-router-dom";
-function DailyUpdates() {
+
+import "./styles.css";
+
+const DailyUpdates: React.FC = () => {
   return (
     <div className="daily-updates">
       <div className="left-panel">
@@ -29,6 +30,6 @@ function DailyUpdates() {
       <div className="right-background"></div>
     </div>
   );
-}
+};
 
 export default DailyUpdates;

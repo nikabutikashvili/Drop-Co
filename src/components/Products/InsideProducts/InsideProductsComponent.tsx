@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import plus from "../../../images/plus.png";
-import minus from "../../../images/minus.png";
+import plus from "../../../assets/images/plus.png";
+import minus from "../../../assets/images/minus.png";
 import { CartContext } from "../../Products/CartContext";
 import { useContext } from "react";
 import axios from "axios";

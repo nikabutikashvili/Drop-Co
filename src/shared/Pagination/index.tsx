@@ -1,5 +1,7 @@
-import React from "react";
+import * as React from "react";
 import _ from "lodash";
+
+import "./styles.css";
 
 export interface pagination {
   itemsCount: number;
@@ -8,7 +10,10 @@ export interface pagination {
   onPageChange(number: number): void;
 }
 const Pagination = (props: pagination) => {
-  console.log(props.currentPage);
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [props.currentPage]);
+
   const pagesCount: number = Math.ceil(props.itemsCount / props.pageSize);
   const pages: Array<number> = _.range(1, pagesCount + 1);
   if (pagesCount === 1) return null;

@@ -1,48 +1,40 @@
-import React, { useState } from "react";
+import * as React from "react";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { CartContext } from "../Products/CartContext";
-import { UserContext } from "../Auth/UserContext";
-import { IsUserContext } from "../Auth/IsUserContext";
+import List from "../../shared/List";
+import Logo from "../../shared/Logo/Logo";
+import "./styles.css";
 
-function Header() {
-  const [user, setUser] = useContext(UserContext);
-  const [cart, setCart] = useContext(CartContext);
-  const [open, setOpen] = useState(false);
-  const [isUser, setIsUser] = useContext(IsUserContext);
+import { CartContext } from "../Products/CartContext";
+
+const Header: React.FC = () => {
+  const [cart, setCart] = React.useContext(CartContext);
+
   return (
     <div className="header">
       <ul className="header-list">
         <Link to="/">
           <li>
-            <div className="logo">
-              <div className="logo-1"></div>
-              <div className="logo-2"></div>
-              <div className="logo-3"></div>
-            </div>
+            <Logo />
           </li>
         </Link>
         <li>
-          <Link to="/login">{isUser ? user.account.username : "Login"}</Link>
+          <Link to="/">Main</Link>
         </li>
         <li>
           <Link to="/basket">Basket {cart.length > 0 ? cart.length : ""}</Link>
         </li>
-        <li onMouseOver={() => setOpen(true)} onMouseOut={() => setOpen(false)}>
+        <li className="item-with-drop-down">
           <Link to="/products" className="product-in-header">
             Products
           </Link>
-          <ul className="drop-down-menu">
-            <li>
-              <Link to="/coffeecatalogue">Coffee</Link>
-            </li>
-            <li>
-              <Link to="/teacatalogue">Tea</Link>
-            </li>
-            <li>
-              <Link to="/snackscatalogue">Snacks</Link>
-            </li>
-          </ul>
+          <List
+            menuItems={[
+              { name: "Coffee", link: "/coffeecatalogue" },
+              { name: "Tea", link: "/teacatalogue" },
+              { name: "Snacks", link: "/snackscatalogue" },
+            ]}
+            className="drop-down-menu"
+          />
         </li>
         <li>
           <Link to="/aboutus">About Us</Link>
@@ -53,6 +45,6 @@ function Header() {
       </ul>
     </div>
   );
-}
+};
 
 export default Header;
