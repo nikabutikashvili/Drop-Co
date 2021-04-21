@@ -20,14 +20,10 @@ import GetYourDiscount from "./components/GetYourDiscount";
 import { DiscountProvider } from "./components/GetYourDiscount/DiscountContext";
 import AllProductsCatalogue from "./components/Products/AllproductsCatalogue";
 import { IsUserProvider } from "./components/Auth/IsUserContext";
-import languages from "./settings/Language/index";
 import ScrollToTop from "./shared/ScrollToTop";
 
-const lang = "en";
-
-function App() {
+const App: React.FC = () => {
   return (
-    // <IntlProvider messages={languages[lang]} locale={lang}>
     <div className="container">
       <ScrollToTop />
       <CartProvider>
@@ -66,8 +62,7 @@ function App() {
         <Footer />
       </CartProvider>
     </div>
-    // </IntlProvider>
   );
-}
+};
 
 export default App;

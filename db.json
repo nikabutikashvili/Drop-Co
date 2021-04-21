@@ -405,17 +405,5 @@
       "number": 1,
       "id": 11
     }
-  ],
-  "users": [
-    {
-      "name": "Nika",
-      "passowrd": "1234",
-      "cart": []
-    },
-    {
-      "name": "Luka",
-      "passowrd": "1234",
-      "cart": []
-    }
   ]
 }

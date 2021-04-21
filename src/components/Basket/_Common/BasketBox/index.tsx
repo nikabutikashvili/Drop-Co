@@ -24,7 +24,7 @@ const BasketBox: React.FC<Props> = ({
         return (
           <div className="basket-box">
             <div className="cart-item">
-              <img className="product-image-in-basket" src={img} />
+              <img className="product-image-in-basket" src={img} alt={name} />
             </div>
             <div className="cart-item">{name}</div>
             <div className="cart-item">$ {price * number}</div>

@@ -3,7 +3,7 @@ import coffeeshop from "../../assets/images/coffeeshop.jpeg";
 
 import "./styles.css";
 
-const AboutUs = () => {
+const AboutUs: React.FC = () => {
   return (
     <div className="about-us">
       <div className="about-us-text">
