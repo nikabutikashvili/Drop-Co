@@ -25,17 +25,19 @@ const CoffeeCatalogue: React.FC<Props> = ({ productType }) => {
     const fetchData = async () => {
       if (productType) {
         const { data: fetchedData } = await axios.get(
-          `http://localhost:4000/${productType}`
+          `https://drop-coffee.herokuapp.com/api/${productType}`
         );
         setData([...fetchedData]);
         setLoading(false);
       } else {
         const { data: coffee } = await axios.get(
-          `http://localhost:4000/coffee`
+          `https://drop-coffee.herokuapp.com/api/coffee`
         );
-        const { data: tea } = await axios.get(`http://localhost:4000/tea`);
+        const { data: tea } = await axios.get(
+          `https://drop-coffee.herokuapp.com/api/tea`
+        );
         const { data: snacks } = await axios.get(
-          `http://localhost:4000/snacks`
+          `https://drop-coffee.herokuapp.com/api/snacks`
         );
         const newArr = [...coffee, ...tea, ...snacks];
         const shuffledArray = shuffleArray(newArr);
