@@ -1,6 +1,7 @@
-import React from "react";
+import * as React from "react";
 import { Link } from "react-router-dom";
-function Products() {
+
+const Products: React.FC = () => {
   return (
     <div className="products">
       <div className="product-box coffe-category">
@@ -35,6 +36,6 @@ function Products() {
       </div>
     </div>
   );
-}
+};
 
 export default Products;

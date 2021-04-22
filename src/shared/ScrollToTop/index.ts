@@ -12,7 +12,7 @@ const ScrollToTop: React.FC<SomeComponentProps> = ({ history }) => {
     return () => {
       unlisten();
     };
-  }, []);
+  }, [history]);
 
   return null;
 };

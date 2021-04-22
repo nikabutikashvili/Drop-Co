@@ -1,29 +1,7 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { useEffect } from "react";
-import ProductsCatalogue from "../../../shared/ProductsCatalogue";
+import * as React from "react";
+import FetchProducts from "../../../shared/FetchProdutcs";
 
-function TeaCatalogue() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data: teaData } = await axios.get("http://localhost:4000/tea");
-      setData([...teaData]);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
-  return (
-    <div>
-      {loading ? (
-        <div className="loading">
-          <h1>Still Loading</h1>
-        </div>
-      ) : (
-        <ProductsCatalogue data={data} />
-      )}
-    </div>
-  );
-}
+const TeaCatalogue: React.FC = () => {
+  return <FetchProducts productType="tea" />;
+};
 export default TeaCatalogue;

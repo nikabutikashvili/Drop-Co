@@ -22,7 +22,7 @@ const BasketBox: React.FC<Props> = ({
     <>
       {cart?.map(({ name, price, img, number }: Basket) => {
         return (
-          <div className="basket-box">
+          <div key={name} className="basket-box">
             <div className="cart-item">
               <img className="product-image-in-basket" src={img} alt={name} />
             </div>

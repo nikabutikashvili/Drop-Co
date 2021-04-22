@@ -10,7 +10,7 @@ const DropDownMenu: React.FC<Props> = ({ menuItems, className }) => {
   return (
     <ul className={className ? className : ""}>
       {menuItems?.map((item: any) => (
-        <li>
+        <li key={item.name}>
           <Link to={item.link}>{item.name}</Link>
         </li>
       ))}

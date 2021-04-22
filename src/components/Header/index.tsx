@@ -7,7 +7,7 @@ import "./styles.css";
 import { CartContext } from "../Products/CartContext";
 
 const Header: React.FC = () => {
-  const [cart, setCart] = React.useContext(CartContext);
+  const [cart] = React.useContext(CartContext);
 
   return (
     <div className="header">

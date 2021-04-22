@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import plus from "../../../assets/images/plus.png";
-import minus from "../../../assets/images/minus.png";
-import { CartContext } from "../../Products/CartContext";
-import { useContext } from "react";
-import axios from "axios";
+import * as React from "react";
 
-function InsideProductComponent(props: any) {
+import { CartContext } from "../CartContext";
+import { Link } from "react-router-dom";
+
+const InsideProductComponent = (props: any) => {
   const {
     name,
     price,
@@ -14,10 +12,12 @@ function InsideProductComponent(props: any) {
     number,
     id,
     reviews,
+    energy,
+    fat,
   } = props.location.state;
-  const [cart, setCart] = useContext(CartContext);
-  const [currentNumber, setCurrentNumber] = useState();
-  const [comment, setComment] = useState();
+  const [cart, setCart] = React.useContext(CartContext);
+  const [currentNumber, setCurrentNumber] = React.useState(0);
+
   const addToCart = () => {
     if (cart.length === 0) {
       const addedProduct = {
@@ -27,6 +27,7 @@ function InsideProductComponent(props: any) {
         number: number,
       };
       setCart((currentCart: any) => [...currentCart, addedProduct]);
+      setCurrentNumber(1);
     } else {
       for (let index = 0; index < cart.length; index++) {
         if (cart[index].name === name) {
@@ -47,31 +48,24 @@ function InsideProductComponent(props: any) {
       }
     }
   };
-  function handleDeleteProduct() {
+  const handleDeleteProduct = (name: string): void => {
     for (let i = 0; i < cart.length; i++) {
       if (cart[i].name === name) {
         if (cart[i].number > 1) {
           let newCart = [...cart];
           newCart[i].number = cart[i].number - 1;
+          setCurrentNumber(newCart[i].number);
           setCart(newCart);
         } else {
           let array = [...cart];
           array.splice(i, 1);
+          setCurrentNumber(0);
           setCart(array);
         }
       }
     }
-  }
-  function handleChange(e: any) {
-    setComment(e.currentTarget.value);
-  }
-  const handleAdd = async () => {
-    const { data: reviews } = await axios.post(
-      `http://localhost:3000/coffee/?id=${id}`,
-      "This is so great"
-    );
-    console.log(reviews);
   };
+
   return (
     <>
       <div className="insideproduct">
@@ -79,23 +73,11 @@ function InsideProductComponent(props: any) {
           <div className="box-top">
             <h1>{name}</h1>
             <div className="productcircle">
-              <div className="box-left">
-                <img
-                  className="minus"
-                  src={minus}
-                  onClick={handleDeleteProduct}
-                />
-              </div>
-              <div className="box-middle">
-                <img className="product-icon" src={image} />
-              </div>
-              <div className="box-right">
-                <img className="plus" src={plus} onClick={addToCart} />
-              </div>
+              <img className="product-icon" src={image} />
             </div>
           </div>
           <div className="box-bottom">
-            <h3>{currentNumber}</h3>
+            <h3>{currentNumber && "x" + currentNumber}</h3>
           </div>
         </div>
         <div className="insideproductright">
@@ -107,21 +89,29 @@ function InsideProductComponent(props: any) {
             <h3>Calories: {calories} </h3>
           </div>
           <div className="characteristic-item">
-            <h3>Enegergy: </h3>
+            <h3>Energy: {energy} </h3>
           </div>
           <div className="characteristic-item">
-            <h3>Fat: </h3>
+            <h3>Fat: {fat}</h3>
           </div>
         </div>
       </div>
-      <div>
-        <h1>Reviews</h1>
-        <h3>Write Your Review</h3>
-        <textarea value={comment} onChange={handleChange}></textarea>
-        <button onClick={handleAdd}>Add review</button>
-        {reviews ? reviews.map((item: any) => <p>{item}</p>) : ""}
+      <div className="product-bottom-navigation">
+        <div className="product-bottom-naviation-section">
+          <button className="btn" onClick={addToCart}>
+            Add to Cart
+          </button>
+          <button className="btn" onClick={() => handleDeleteProduct(name)}>
+            Delete from Cart
+          </button>
+        </div>
+        <div className="product-bottom-naviation-section">
+          <Link to="/basket">
+            <button className="btn">Go to your Cart</button>
+          </Link>
+        </div>
       </div>
     </>
   );
-}
+};
 export default InsideProductComponent;

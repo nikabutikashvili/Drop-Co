@@ -13,11 +13,11 @@ export interface Item {
 
 const Basket: React.FC = () => {
   const [cart, setCart] = React.useContext(CartContext);
-  const [Discount, setDiscount] = React.useContext(DiscountContext);
+  const [Discount] = React.useContext(DiscountContext);
 
   let totalSum = 0;
   cart.map((item: Item) => {
-    totalSum = totalSum + item.price * item.number;
+    return (totalSum = totalSum + item.price * item.number);
   });
 
   const handleDeleteProduct = (name: string): void => {

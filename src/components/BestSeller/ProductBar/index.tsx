@@ -12,7 +12,7 @@ interface Props {
 const ProductBar: React.FC<Props> = ({ link, className, img, title, text }) => {
   return (
     <Link to={link} className={className ? className : ""}>
-      <img src={img} />
+      <img alt={title} src={img} />
       <h1>{title}</h1>
       <p>{text}</p>
     </Link>

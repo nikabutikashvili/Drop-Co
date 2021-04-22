@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import Search from "../../../components/Products/ProductSearch";
+import Search from "../../Search";
 
 interface Props {
   handleChange: (event: React.SyntheticEvent) => void;

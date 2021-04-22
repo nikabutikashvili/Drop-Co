@@ -17,6 +17,15 @@ const Contact: React.FC = () => {
   });
 
   const handleSubmit = (): void => {
+    if (
+      inputValues.name === "" ||
+      inputValues.city === "" ||
+      inputValues.email === "" ||
+      inputValues.subject === "" ||
+      inputValues.feedback === ""
+    ) {
+      return null;
+    }
     setShowForm(false);
   };
 

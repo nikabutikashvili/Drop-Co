@@ -17,15 +17,18 @@ const ProductsCatalogue = (props: any) => {
 
   React.useEffect(() => {
     if (searchTerm) {
-      let list = data.filter((product: any) =>
+      const list = data.filter((product: any) =>
         product?.name
           .toLocaleLowerCase()
           .includes(searchTerm.toLocaleLowerCase())
       );
       setSearchProduct(list);
       setProductsOnPage(paginate(searchProduct, currentPage, pageSize));
+    } else {
+      setSearchProduct(data);
+      setProductsOnPage(paginate(searchProduct, currentPage, pageSize));
     }
-  }, [data, searchTerm]);
+  }, [data, searchTerm, currentPage]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
